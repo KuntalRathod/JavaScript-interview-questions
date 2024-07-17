@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let array = [1,2,3,4,9,6,8,7,5]
+        let largest = Number.MIN_VALUE
+        let sLargest = Number.MIN_VALUE
+
+        for(let i=0; i<array.length; i++){
+            if(largest < array[i]){
+                sLargest = largest //slargest mein 1 store krdenge
+                largest = array[i] //largest mein 2 store krdenge!
+            }
+            //6 largest se chota hai aur slargest se bada haai
+            if(sLargest < array[i] && largest > array[i]){
+                sLargest = array[i]
+            }
+        }
+        console.log(sLargest)
+    </script>
+    
+</body>
+</html>

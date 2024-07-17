@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Index number to each character in js</title>
+  </head>
+  <body>
+    <script>
+      //mango
+      //m0a1n2g3o
+
+      function text(txt) {
+        let newTxt = txt.split("")
+        let newStr = ""
+        newTxt.forEach((value,index) => {
+          newStr += value + index
+
+          //console.log(value)
+        })
+        return newStr.slice(0,9)
+      }
+      console.log(text("mango"))
+    </script>
+  </body>
+</html>

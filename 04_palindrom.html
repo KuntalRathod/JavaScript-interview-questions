@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>palindrom</title>
+  </head>
+  <body>
+    <script>
+      //write a js program to check whether given string is palindrom or not?
+
+      let str = prompt("Enter Word")
+      let palindrom = (value) => {
+        let reverseStr = value.split("").reverse().join("")
+        str === reverseStr
+          ? console.log(value + " is palindrom")
+          : console.log(value + " is not palindrom")
+      }
+      palindrom(str)
+    </script>
+  </body>
+</html>
