@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = "ABBA"
+      let isPalindrome = true
+      function checkPalindrome(str) {
+        let start = 0
+        let end = str.length - 1
+        while (start < end) {
+          if (str[start] !== str[end]) {
+            isPalindrome = false
+            break
+          }
+          start++
+          end--
+        }
+        if (isPalindrome) {
+          console.log(str, "yes this is palindrome")
+        } else {
+          console.log(str, "no , its not palindrome")
+        }
+      }
+      checkPalindrome(str)
+    </script>
+  </body>
+</html>
