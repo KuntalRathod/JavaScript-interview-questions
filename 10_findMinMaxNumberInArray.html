@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Min Max number in Array</title>
+  </head>
+  <body>
+    <script>
+      function findMinMax(array) {
+        let min = (max = array[0])
+        for (let i = 1; i < array.length; i++) {
+          if (max < array[i]) {
+            //16<23
+            max = array[i]
+          }
+          if (min > array[i]) {
+            //16 > 0
+            min = array[i]
+          }
+        }
+        return { min, max }
+      }
+      console.log(findMinMax([16, 23, 0, -5, -14]))
+      //usng inbuilt function
+      //Math.max(...array)
+      //Math.min(...array)
+    </script>
+  </body>
+</html>
