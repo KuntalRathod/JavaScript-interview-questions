@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to add an element at any index of array</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 2, 3, 4, 9, 6, 8, 7, 5]
+      arr.splice(6, 3, 10) //index,replace,value
+      //console.log(arr)
+
+      //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      let array = [1, 2, 3, 4, 9, 6, 8, 7, 5]
+      let removedValues = array.splice(4, 4) //index,replace
+      console.log(removedValues)
+      console.log(array)
+    </script>
+  </body>
+</html>
