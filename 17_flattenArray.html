@@ -19,51 +19,16 @@
       console.log(sum)
       */
 
-      //console.log(arr.flat(3)) //flat(depth)
-      //output - [1,2,3,4,5,6,7]
+      //let arr = [1, [2], [[3, 4]], [[[5, 6, 7]]]] // Define a nested array
 
       //console.log(arr.flat(3)) //flat(depth)
       //output - [1,2,3,4,5,6,7]
 
       /*
 
-      let arr = [1, [2], [[3, 4]], [[[5, 6, 7]]]] // Define a nested array
 
       // Function to flatten the array using recursion
-      function completeFlat(arr, depth) {
-        if (depth > 0) {
-          // Check if the depth is greater than 0
-          let result = arr.reduce((acc, value) => {
-            // Use reduce to accumulate the flattened array
-            if (Array.isArray(value)) {
-              // Check if the current value is an array
-              let res = completeFlat(value, depth - 1) // Recursively flatten the array with depth - 1
-              console.log(res) // Log the intermediate result
-              return acc.concat(res) // Concatenate the flattened result to the accumulator
-            } else {
-              return acc.concat(value) // If not an array, concatenate the value directly
-            }
-          }, [])
-          return result // Return the accumulated result
-        }
-      }
-
-      console.log(completeFlat(arr, Infinity)) // Call the function with the array and Infinity depth to completely flatten it
-
-      */
-
-      let arr = [1, [2], [[3, 4]], [[[5, 6, 7]]]] // Define a nested array
-
-      let result = []
-      for (let i = 0; i < arr.length; i++) {
-        if (Array.isArray(arr[i])) {
-          arr.push(...arr[i])
-          console.log(arr, "=======", i)
-        } else {
-            result.push(arr[i])
-        }
-      }
-      console.log(result)
+     
     </script>
   </body>
 </html>
