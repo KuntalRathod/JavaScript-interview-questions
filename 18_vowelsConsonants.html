@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count the vowels and consonants in the given string</title>
+  </head>
+  <body>
+    <script>
+      let string = prompt("Enter the String")
+      let count = 0
+
+      for (let i = 0; i < string.length; i++) {
+        let letter = string[i].toLowerCase() //javascript
+        if (letter == "a" || letter == "e" || letter == "i" || letter == "u") {
+          count++
+        }
+      }
+      document.write(
+        `Vowels : ${count} and Consonants : ${string.length - count}`
+      )
+      document.write(`<br/> String is : ${string}`)
+    </script>
+  </body>
+</html>
