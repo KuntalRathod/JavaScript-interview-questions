@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci using recursion</title>
+  </head>
+  <body>
+    <script>
+      //i need 4th fobonacci number
+
+      function Fibonacci(n) {
+        //base case
+        if (n == 1 || n == 2) {
+          return 1
+        } else {
+          let result = Fibonacci(n - 1) + Fibonacci(n - 2)
+          return result
+        }
+      }
+      console.log(Fibonacci(5)) //output is 3
+      console.log(Fibonacci(1))
+      console.log(Fibonacci(2))
+      console.log(Fibonacci(3))
+      console.log(Fibonacci(4))
+    </script>
+  </body>
+</html>
