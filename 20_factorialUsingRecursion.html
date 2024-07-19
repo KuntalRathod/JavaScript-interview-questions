@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>factorial using recursion</title>
+  </head>
+  <body>
+    <script>
+      function fact(n) {
+        //base case
+        if (n == 1) {
+          return 1
+        }
+        let result = n * fact(n - 1)
+        return result
+      }
+      console.log(fact(5))
+    </script>
+  </body>
+</html>

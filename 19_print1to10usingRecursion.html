@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-wid{th, initial-scale=1.0" />
+    <title>Print 1 to 10 using recursion</title>
+  </head>
+  <body>
+    <script>
+      function printCount(n) {
+        //base case
+        if (n == 11) {
+          return
+        }
+        console.log(n)
+        printCount(n + 1)
+      }
+      printCount(1)
+    </script>
+  </body>
+</html>
