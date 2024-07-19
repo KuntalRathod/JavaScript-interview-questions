@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counts pairs of the given sum</title>
+  </head>
+  <body>
+    <script>
+      //O(n)2 complexity
+      /*
+      let arr = [1, 5, 7, 1]
+      //answer =2
+      let sum = 6
+      let result = 0
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[i] + arr[j] == sum) {
+            result++
+          }
+        }
+      }
+      console.log(result)
+      */
+      //2nd approch with O(n) complexity
+      let arr = [1, 5, 7, 1]
+      //answer =2
+      let sum = 6
+      let result = {}
+      let count = 0
+
+      for (let i = 0; i < arr.length; i++) {
+        let temp = sum - arr[i]
+        if (temp in result) {
+          count++
+          delete result[temp]
+        }
+        result[arr[i]] = "a" //assign as key
+      }
+      console.log(count)
+    </script>
+  </body>
+</html>
