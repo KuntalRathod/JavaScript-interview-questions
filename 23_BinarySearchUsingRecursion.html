@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary search using Recursion</title>
+  </head>
+  <body>
+    <script>
+      let nums = [-1, 0, 3, 5, 9, 12]
+      let target = 9
+      let search = function (nums, target) {
+        let start = 0
+        let end = nums.length
+        function binarySearch(start, end, nums, target) {
+          let mid = Math.floor((start + end) / 2)
+          if (nums[mid] == target) {
+            return mid
+          }
+          if (nums[mid] < target) {
+            return binarySearch(mid + 1, end, nums, target)
+          } else {
+            return binarySearch(start, mid, nums, target)
+          }
+        }
+        let result = binarySearch(st, end, nums, target)
+      }
+    </script>
+  </body>
+</html>
