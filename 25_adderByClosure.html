@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function outerAdder(a) {
+        function innerAdder(b) {
+          console.log(a + b)
+        }
+        return innerAdder
+      }
+      let addTo5 = outerAdder(5)
+      let addTo10 = outerAdder(5)
+      addTo10(5)
+
+      addTo5(5)
+      addTo5(10)
+    </script>
+  </body>
+</html>
