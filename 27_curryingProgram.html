@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //normal version = without using currying
+      /*
+      function add(a, b, c) {
+        return a + b + c
+      }
+      console.log(add(5, 5, 5))
+      */
+
+      //using curry
+      //when all three paramteres are available then only i want to run this add operation
+      function add(a) {
+        return function (b) {
+          return function (c) {
+            return a + b + c
+          }
+        }
+      }
+      console.log(add(5)(5)(5))
+
+      //modern js using Es6
+      const sum = (a) => (b) => (c) => a + b + c
+      console.log(sum(1)(2)(3))
+
+      //let see the practical usecase
+      function sendAutoEmail(to) {
+        return function (subject) {
+          return function (body) {
+            console.log(`Sending Email ${to} with subject ${subject}: ${body}`)
+          }
+        }
+      }
+      let step1 = sendAutoEmail("Kuntalrathod77@gmail.com")
+      let step2 = step1("New order Confirmation")
+      step2("hey kuntal, here is something for you!!")
+
+      //modern js using Es6
+      const sendAutoEmailService = (to) => (subject) => (body) =>
+        console.log(`Sending Email ${to} with subject ${subject}: ${body}`)
+    </script>
+  </body>
+</html>

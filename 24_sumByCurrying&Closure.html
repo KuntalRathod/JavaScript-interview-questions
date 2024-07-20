@@ -9,10 +9,9 @@
     <script>
       //we need sum of this two number like this sum(5)(5)
       function outerSum(x) {
-        function innerSum(y) {
+        return function (y) {
           return x + y
         }
-        return innerSum
       }
       console.log(outerSum(5)(5))
     </script>
