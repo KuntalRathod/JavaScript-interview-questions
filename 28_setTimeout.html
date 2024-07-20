@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimeout</title>
+  </head>
+  <body>
+    <script>
+      //setTimeout ke andar se koy bhi value bahar lekar aani hai toh
+      //(external environment mein lekar aani hai toh) so promises ko use karna pdega
+
+      /*
+
+      function print() {
+        setTimeout(() => {
+          let a = 10
+          return a
+        }, 500)
+      }
+
+      let a = print()
+      console.log(a) //this output will be undefined!!
+
+      */
+
+      function print() {
+        return new Promise((res, rej) => {
+          setTimeout(() => {
+            let a = 10
+            res(a)
+          }, 2000)
+        })
+      }
+
+      print().then((a) => {
+        console.log(a)
+      })
+    </script>
+  </body>
+</html>

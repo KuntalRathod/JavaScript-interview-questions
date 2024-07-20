@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valid Parenthesis</title>
+  </head>
+  <body>
+    <script>
+      let str = ["()[]{}"]
+      console.log(str.length)
+      let isValid = (str) => {
+        let stack = []
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] == "{" || str[i] == "(" || str[i] == "[") {
+            stack.unshift(str[i])
+          } else {
+            if (str[i] == "}") {
+              if (str[0] == "{") {
+                stack.shift()
+                continue
+              } else {
+                return false
+              }
+            }
+            if (str[i] == ")") {
+              if (str[0] == "(") {
+                stack.shift()
+                continue
+              } else {
+                return false
+              }
+            }
+            if (str[i] == "]") {
+              if (str[0] == "[") {
+                stack.shift()
+                continue
+              } else {
+                return false
+              }
+            }
+          }
+        }
+        if (stack.length > 0) {
+          return false
+        } else {
+          return true
+        }
+      }
+      console.log(isValid(str)) // Output: true or false
+    </script>
+  </body>
+</html>
