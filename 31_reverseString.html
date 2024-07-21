@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse String leetcode problem 344.</title>
+  </head>
+  <body>
+    <script>
+      //Time complexity is O(N)
+      //Space complexity is O(1)
+      //Use two pointers one at the first position and one at the end
+      //swap the two letters
+      //advance the pointers
+      //we are using two pointer approach
+
+      let str = ["h", "e", "l", "l", "o"] //given input string
+      let reverseString = (str) => {
+        let left = 0
+        let right = str.length - 1
+        while (left < right) {
+          let hold = str[left]
+          str[left] = str[right]
+          str[right] = hold
+          left++
+          right--
+        }
+        return str
+      }
+      console.log(reverseString(str))
+    </script>
+  </body>
+</html>
