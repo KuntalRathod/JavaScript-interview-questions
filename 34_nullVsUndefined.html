@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Null vs undefined</title>
+  </head>
+  <body>
+    <script>
+      let result
+      console.log(result) //undefined
+      console.log(typeof result) //undefined
+      //undefined => when you declared a varaiable but did not assign any value to it
+
+      let test = null
+      //console.log(test) //null
+      console.log(typeof null) //object
+      //null => null is assignment value so you declare a variable and you assign the
+      //null explicitly to the variable
+
+      console.log(null === undefined) //false
+      console.log(null == undefined) //true
+
+      function sayHello() {
+        console.log("Hello world")
+        // return //second case = return statement but not return anything then result will be same undefined
+      }
+      const greet = sayHello()
+      console.log(greet) // if the function is not returning anything then the value will be undefined implicitly
+
+      const obj = {
+        name: "vatsal",
+        age: "20",
+      }
+      console.log(obj.hello) //you are accessing property that not defined in the object then you get the value undefined
+    </script>
+  </body>
+</html>
