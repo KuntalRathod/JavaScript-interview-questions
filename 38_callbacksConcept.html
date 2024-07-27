@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callbacks in js</title>
+  </head>
+  <body>
+    <script>
+      console.log("start")
+      function importantAction(username, cb) {
+        setTimeout(() => {
+          cb(`Hello my name is ${username}`)
+        }, 1000)
+      }
+      const message = importantAction("Kuntal", function (message) {
+        console.log(message)
+      })
+      console.log("stop")
+    </script>
+  </body>
+</html>

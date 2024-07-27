@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise use for avoiding callback hell</title>
+  </head>
+  <body>
+    <script>
+      //promises is basically represent the upcoming completion or a failure of
+      //a asynchronous event and its resulting value.
+      const game = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const result = true
+          if (result) {
+            resolve("you playing game!!")
+          } else {
+            reject("Why you are not playing game??")
+          }
+        }, 1000)
+      })
+
+      game
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.error(err)
+        })
+    </script>
+  </body>
+</html>

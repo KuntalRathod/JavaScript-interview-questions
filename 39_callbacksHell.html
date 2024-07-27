@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback hell concept</title>
+  </head>
+  <body>
+    <script>
+      console.log("start")
+      function importantAction(username, cb) {
+        setTimeout(() => {
+          cb(`Hello my name is ${username}`)
+        }, 1000)
+      }
+      function likedThisVideo(video, cb) {
+        setTimeout(() => {
+          cb(`Like this ${video} video`)
+        }, 1000)
+      }
+      function shareThisVideo(video, cb) {
+        setTimeout(() => {
+          cb(`Share this ${video} video`)
+        }, 1000)
+      }
+
+      importantAction("Kuntal", function (message) {
+        console.log(message)
+        likedThisVideo("Js interview questions", (action) => {
+          console.log(action)
+          shareThisVideo("Js interview questions", (action) => {
+            console.log(action)
+          })
+          shareThisVideo("Js interview questions", (action) => {
+            console.log(action)
+          })
+          shareThisVideo("Js interview questions", (action) => {
+            console.log(action)
+          })
+          shareThisVideo("Js interview questions", (action) => {
+            console.log(action)
+          })
+          shareThisVideo("Js interview questions", (action) => {
+            console.log(action)
+          })
+        })
+      })
+      console.log("stop")
+
+      //to remove this callback hell problem we can use promises
+    </script>
+  </body>
+</html>
