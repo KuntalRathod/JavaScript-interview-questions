@@ -3,37 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Promise use for avoiding callback hell</title>
+    <title>Promise chaining</title>
   </head>
   <body>
     <script>
-      //promises is basically represent the upcoming completion or a failure of
-      //a asynchronous event and its resulting value.
 
-      /*
-      const game = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          const result = true
-          if (result) {
-            resolve("you playing game!!")
-          } else {
-            reject("Why you are not playing game??")
-          }
-        }, 1000)
-      })
-
-      game
-        .then((res) => {
-          console.log(res)
-        })
-        .catch((err) => {
-          console.error(err)
-        })
-
-        */
-
-      //Rewriting callbacks in promises
-
+        //this is promise chaining 
+        //we are returning the promises and we are chaning another one after the other
+        //as we return the value for the previous promise
       console.log("start")
 
       function importantAction(username) {
@@ -61,21 +38,20 @@
       importantAction("kuntal")
         .then((res) => {
           console.log(res)
-          likedThisVideo("js").then((res) => {
-            console.log(res)
-            shareThisVideo("javaScript").then((res) => {
-              console.log(res)
-            })
-          })
+          return likedThisVideo("js")
+        })
+        .then((res) => {
+          console.log(res)
+          return shareThisVideo("javascript")
+        })
+        .then((res) => {
+          console.log(res)
         })
         .catch((err) => {
           console.log(err)
         })
 
       console.log("end")
-
-      //this is again pyramid like structure so we need to use promise chaining approch
-      //to get rid of this pyramid like structure
     </script>
   </body>
 </html>

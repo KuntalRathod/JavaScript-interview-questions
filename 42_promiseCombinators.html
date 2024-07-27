@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Combinators</title>
+  </head>
+  <body>
+    <script>
+      //promise combinators helps us to execute more than one promise at one time
+      //and the return result accordingly so there are 4 types of promise combinators
+      console.log("start")
+
+      function importantAction(username) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Hello my name is ${username}`)
+          }, 1000)
+        })
+      }
+      function likedThisVideo(video) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            reject(`Like this ${video} video`)
+          }, 1000)
+        })
+      }
+      function shareThisVideo(video) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Share this ${video} video`)
+          }, 1000)
+        })
+      }
+      //basically this will return a promise with all of the fullfilled promises
+      //inside of an array
+      //but if any one of these promises fails so all of this failes
+
+      Promise.all([
+        importantAction("kuntal"),
+
+        likedThisVideo("js"),
+
+        shareThisVideo("javascript"),
+      ]).then((res)=>{
+        console.log(res)
+      }).catch((err)=>{
+        console.error('Error: Promises failed',err)
+      })
+
+      console.log("end")
+    </script>
+  </body>
+</html>
