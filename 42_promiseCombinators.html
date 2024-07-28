@@ -53,7 +53,49 @@
       //-----------------------------
 
       //if any one of these promises fullfilled first so that one will return first
-      Promise.race([
+      // Promise.race([
+      //   importantAction("kuntal"),
+
+      //   likedThisVideo("js"),
+
+      //   shareThisVideo("javascript"),
+      // ])
+      //   .then((res) => {
+      //     console.log(res)
+      //   })
+      //   .catch((err) => {
+      //     console.error("Error: Promises failed", err)
+      //   })
+
+      // console.log("end")
+
+      //-------------------------
+
+      //this one is actually work like promise.all but even if one of these promiese
+      //failed so its gonna return the failed promises as well as fullfilled promises
+      // Promise.allSettled([
+      //   importantAction("kuntal"),
+
+      //   likedThisVideo("js"),
+
+      //   shareThisVideo("javascript"),
+      // ])
+      //   .then((res) => {
+      //     console.log(res)
+      //   })
+      //   .catch((err) => {
+      //     console.error("Error: Promises failed", err)
+      //   })
+
+      // console.log("end")
+
+      //-------------------------------
+
+      //now this is exactly like promise.race but it only returns the first fullfilled promises 
+      //and ignores all the rejected ones
+      //but what if all promises fail so only then this will give error like all promises were rejected
+      
+      Promise.any([
         importantAction("kuntal"),
 
         likedThisVideo("js"),
