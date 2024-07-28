@@ -9,11 +9,11 @@
 
     <script>
         let array = [1,2,3,4,9,6,8,7,5]
-        let largest = Number.MIN_VALUE
-        let sLargest = Number.MIN_VALUE
+        let largest = Number.MIN_VALUE //0
+        let sLargest = Number.MIN_VALUE //0
 
         for(let i=0; i<array.length; i++){
-            if(largest < array[i]){
+            if(largest < array[i]){ // 1<2
                 sLargest = largest //slargest mein 1 store krdenge
                 largest = array[i] //largest mein 2 store krdenge!
             }
