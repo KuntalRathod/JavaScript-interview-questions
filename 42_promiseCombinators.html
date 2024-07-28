@@ -21,32 +21,51 @@
       function likedThisVideo(video) {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
-            reject(`Like this ${video} video`)
-          }, 1000)
+            resolve(`Like this ${video} video`)
+          }, 2000)
         })
       }
       function shareThisVideo(video) {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
             resolve(`Share this ${video} video`)
-          }, 1000)
+          }, 3000)
         })
       }
       //basically this will return a promise with all of the fullfilled promises
       //inside of an array
       //but if any one of these promises fails so all of this failes
 
-      Promise.all([
+      // Promise.all([
+      //   importantAction("kuntal"),
+
+      //   likedThisVideo("js"),
+
+      //   shareThisVideo("javascript"),
+      // ]).then((res)=>{
+      //   console.log(res)
+      // }).catch((err)=>{
+      //   console.error('Error: Promises failed',err)
+      // })
+
+      // console.log("end")
+
+      //-----------------------------
+
+      //if any one of these promises fullfilled first so that one will return first
+      Promise.race([
         importantAction("kuntal"),
 
         likedThisVideo("js"),
 
         shareThisVideo("javascript"),
-      ]).then((res)=>{
-        console.log(res)
-      }).catch((err)=>{
-        console.error('Error: Promises failed',err)
-      })
+      ])
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.error("Error: Promises failed", err)
+        })
 
       console.log("end")
     </script>
