@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("start")
+      const fn = () =>
+        new promise((resolve, reject) => {
+          console.log(1)
+          resolve("success")
+        })
+
+      console.log("middle")
+
+      fn().then((res) => {
+        console.log(res)
+      })
+      console.log("end")
+
+      //output
+      //start
+      //middle
+      //1
+      //end
+      //success
+    </script>
+  </body>
+</html>

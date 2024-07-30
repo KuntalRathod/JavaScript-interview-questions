@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <!-- Promises in javascript 
+     Ques - 1 - What's the output??
+    js engine execute synchronous code first and then asynchronous code  -->
+    <script>
+      console.log("start")
+      const promise1 = new Promise((resolve, reject) => {
+        console.log(1)
+        resolve(2)
+      })
+
+      promise1.then((res) => {
+        console.log(res)
+      })
+
+      console.log("end")
+      
+      //output
+      //start
+      //1
+      //end
+      //2
+    </script>
+  </body>
+</html>
