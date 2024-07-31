@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise chaining</title>
+  </head>
+  <body>
+    <script>
+      //Guess the output!!
+      function job(state) {
+        return new Promise((resolve, reject) => {
+          if (state) {
+            resolve("success")
+          } else {
+            reject("error")
+          }
+        })
+      }
+
+      const promise = job(true)  
+
+      promise
+        .then(function (data) {
+          console.log(data)   //success
+          return job(true)    
+        })
+        .then(function (data) {
+          if (data !== "victory") {
+            throw "Defeat"  //throw error so this will be going inside catch block
+          }
+          return job(true) //ignores this
+        })
+        .then(function (data) {
+          console.log(data)
+        })
+        .catch(function (error) {
+          console.log(error)  //defeat
+          return job(false)
+        })
+        .then(function (data) {
+          console.log(data)
+          return job(true)
+        })
+        .catch(function (error) {
+          console.log(error)  //error
+          return "Error Caught"  
+        })
+        .then(function (data) {
+          console.log(data)  //Error caught
+          return new Error("test")  
+        })
+        .then(function (data) { 
+          console.log("Success ", data.message) // success, test
+        }) 
+        .catch(function (data) {
+          console.log("Error: ", data.message)
+        })
+
+        //output
+        //success
+        //defeat
+        //error
+        //error caught
+        //success : test
+    </script>
+  </body>
+</html>

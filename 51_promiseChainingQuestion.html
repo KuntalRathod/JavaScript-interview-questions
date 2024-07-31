@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise chaining</title>
+  </head>
+  <body>
+    <script>
+      //interview asked this question!
+
+      //create a promise called firstpromise which will resolve a text called first
+      //then we have to create another promise called second promise which will resolve our
+      //first promise that we had created earlier then what we supposed to do we will resolve
+      //our second promise and output of which we have to pass to our first promise and then print
+      //the first promise.
+
+      const firstPromise = new Promise((resolve, reject) => {
+        resolve("first")
+      })
+      const secondPromise = new Promise((resolve, reject) => {
+        resolve(firstPromise)
+      })
+
+      secondPromise
+        .then((res) => {
+          return res
+        })
+        .then((res) => console.log(res))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function job(state) {
+        return new Promise((resolve, reject) => {
+          if (state) {
+            resolve("success")
+          } else {
+            reject("error")
+          }
+        })
+      }
+
+      const promise = job(true)
+
+      promise
+        .then(function (data) {
+          console.log(data)
+          return job(false)
+        })
+        .catch(function (error) {
+          console.log(error)
+          return "Error caught"
+        })
+        .then(function (data) {
+          console.log(data)
+          return job(true)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+
+        //output
+        //success
+        //error
+        //Error caught
+        
+    </script>
+  </body>
+</html>
