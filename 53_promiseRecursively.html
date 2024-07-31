@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solve promise Recursively</title>
+  </head>
+  <body>
+    <script>
+      //Solve promise Recursively
+      function importantAction(username) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Hello my name is ${username}`)
+          }, 1000)
+        })
+      }
+      function likedThisVideo(video) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Like this ${video} video`)
+          }, 1000)
+        })
+      }
+      function shareThisVideo(video) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Share this ${video} video`)
+          }, 1000)
+        })
+      }
+
+      function promRecurse(funcPromises) {
+        if (funcPromises.length === 0) return
+        const currPromise = funcPromises.shift()
+
+        currPromise
+          .then((res) => console.log(res))
+          .catch((err) => console.log(err))
+          promRecurse(funcPromises)
+      }
+
+      promRecurse([
+        importantAction("kuntal"),
+        likedThisVideo("js"),
+        shareThisVideo("javascript"),
+      ])
+    </script>
+  </body>
+</html>
