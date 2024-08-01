@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accidental global scope variable concept question</title>
+  </head>
+  <body>
+    <script>
+      function foo() {
+        var a = b = 0;
+        a++
+        return a
+      }
+      foo()
+
+      console.log(typeof a) //undefined
+      console.log(typeof b) //number
+
+      
+    </script>
+  </body>
+</html>
