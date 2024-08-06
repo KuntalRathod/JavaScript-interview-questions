@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble sort with recursion</title>
+  </head>
+  <body>
+    <script>
+      //Complexity of bubble sort algoridham :- O(n**2)
+      let arr = [64, 34, 25, 12]
+
+      function recursiveBubbleSort(data, count) {
+        if (count == 1) {
+          return
+        }
+        let currentEl = 0
+
+        for (let i = 0; i < count - 1; i++) {
+          if (data[i] > data[i + 1]) {
+            let temp = data[i]
+            data[i] = data[i + 1]
+            data[i + 1] = temp
+            currentEl++
+          }
+        }
+        recursiveBubbleSort(data, count - 1)
+      }
+      recursiveBubbleSort(arr, arr.length)
+      console.log(arr)
+    </script>
+  </body>
+</html>
