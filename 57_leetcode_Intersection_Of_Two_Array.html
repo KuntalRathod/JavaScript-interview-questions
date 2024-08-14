@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nums1 = [1, 2, 2, 1]
+      let nums2 = [2, 2, 3, 4, 5]
+
+      function Intersection(nums1, nums2) {
+        let objNums1 = {}
+        let result = []
+
+        //make a hash map of the first array of the nums [key,value pairs]
+        for (let value of nums1) {
+          if (!objNums1[value]) {
+            objNums1[value] = 0
+          }
+          objNums1[value] = objNums1[value] + 1
+        }
+        console.log(objNums1)
+
+        //loop through the second array of nums add see if hashmap has a count of value
+        for (let i of nums2) {
+          if (objNums1[i] > 0) {
+            result.push(i)
+            objNums1[i] = objNums1[i] - 1
+          }
+        }
+        return result
+      }
+
+      let result = Intersection(nums1, nums2)
+      console.log(result)
+    </script>
+  </body>
+</html>
