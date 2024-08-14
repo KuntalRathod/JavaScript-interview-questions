@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counting character occurances in a String</title>
+  </head>
+  <body>
+    <script>
+      function countCharacters(inputString) {
+        // console.log(inputString)
+        let result = {}
+        inputString = inputString.toLowerCase()
+        for (let i = 0; i < inputString.length; i++) {
+          if (!result[inputString[i]]) {
+            result[inputString[i]] = 0
+          }
+          result[inputString[i]] = result[inputString[i]] + 1
+        }
+        return result
+      }
+      let result = countCharacters("Kuntal Rathod")
+      console.log(result)
+    </script>
+  </body>
+</html>
