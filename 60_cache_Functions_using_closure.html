@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cache functions using clousers</title>
+  </head>
+  <body>
+    <script>
+      // multiply(2,3) => 6
+      // multiply(4,3) => 12
+      // multiply(2,3) => 6 (cached)
+
+      function cacheMaker() {
+        const cache = {}
+        return function (a, b) {
+          const id = a + "*" + b //'2*3'
+          if (cache[id]) {
+            //cache
+            console.log("Found in cache")
+            return cache[id]
+          } else {
+            console.log("Computing....")
+            const result = a * b
+            cache[id] = result
+            return result
+          }
+        }
+      }
+      const multiply = cacheMaker()
+
+      console.log(multiply(2, 3))
+      console.log(multiply(4, 3))
+      console.log(multiply(2, 3))
+      console.log(multiply(4, 3))
+    </script>
+  </body>
+</html>
