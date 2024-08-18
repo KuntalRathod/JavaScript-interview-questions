@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build a progress bar using html,css,js</title>
+    <style>
+      .bar-wrapper {
+        border: 1px solid rgb(0, 128, 0);
+        width: 240px;
+        height: 24px;
+      }
+      .bar {
+        background-color: green;
+        height: inherit;
+        width: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bar-wrapper">
+      <div class="bar" />
+    </div>
+    <button onclick="fill()">Fill</button>
+
+    <script>
+      let bar = document.querySelector(".bar")
+      let time = 5
+
+      const fill = () => {
+        let current = 0
+        let intervalId = setInterval(
+          () => {
+            if (current >= 100) {
+              clearInterval(intervalId)
+            } else {
+              current++
+              bar.style.width = current + "%"
+            }
+          },
+          (time * 1000) / 100
+        )
+      }
+    </script>
+  </body>
+</html>
