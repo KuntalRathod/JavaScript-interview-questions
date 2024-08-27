@@ -1,11 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Develop a toggle button that switches between "ON" and "OFF" states
+    </title>
+    <style>
+      body {
+        display: grid;
+        height: 100%;
+        place-content: center;
+      }
+
+      #button {
+        height: 200px;
+        width: 200px;
+        border: none;
+        background-color: rgb(43, 226, 98);
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button">Toggle</button>
+
+    <script>
+      //on: green
+      //off: black
+
+      let buttonState = true //false=> off and truw=> on
+
+      const button = document.getElementById("button")
+      button.onclick = () => {
+        console.log("clicked")
+        buttonState = !buttonState
+        console.log(buttonState)
+        UpdateButton()
+      }
+
+      const UpdateButton = () => {
+        if (buttonState == true) {
+          button.style.backgroundColor = "rgb(43, 226, 98)"
+        } else {
+          button.style.backgroundColor = "black"
+        }
+      }
+    </script>
+  </body>
 </html>
