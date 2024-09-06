@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map V/s forEach V/s filter V/s reduce</title>
+  </head>
+  <body>
+    <script>
+      //map return values
+      //if you want to modification in existing arrayy you can use this
+      let data = [1, 2, 3, 4, 5, 6, 7]
+      const resultMap = data.map((item) => item * 10)
+      // console.log(resultMap)
+
+      //---------------------------------
+
+      //foreach does not return array
+      //   let resultForEach = data.forEach((item) => item * 10)
+      let resultForEach = data.forEach((item) => console.log(item * 10))
+
+      //   console.log(resultForEach)
+
+      //---------------------------------
+
+      //works based on conditions and return true or false values
+      //   let resultFilter = data.filter((item) => item * 10) //=> gives undefined
+      let resultFilter = data.filter((item) => item > 2)
+
+      //   console.log(resultFilter)
+
+      //---------------------------------
+
+      //return single output
+
+      let reduceResult = data.reduce((prev, next) => prev + next, 10)
+      console.log(reduceResult);
+      
+    </script>
+  </body>
+</html>
